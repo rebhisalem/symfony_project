@@ -1,0 +1,134 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'admin_session_new' %}
+
+{% block main %}
+    <section class="some-margin">
+	<input type="hidden" id="my_salle" value="{{session.classroom.id}}" />
+	<input type="hidden" id="my_section" value="{{session.section.id}}" />
+	<input type="hidden" id="my_president" value="{{session.president.id}}" />
+	<input type="hidden" id="my_nbr" value="{{session.soutenances|length}}" />
+	<input type="hidden" id="my_id" value="{{session.id}}" />
+	{{ form_start(form) }}
+            <div id="to-print">
+                <div class="row text-center">
+                	<form>
+                        <select name="type" id="stype" class="form-control">
+                            <option value="0" {% if session.stype == 0 %} selected {% endif %}>p.f.e. ingenieurs</option>
+                            <option value="1" {% if session.stype == 1 %} selected {% endif %}>s.f.e. en licence appliquée</option>
+                        </select>
+						<select name="month" id="month" class="form-control">
+                            <option value="Juin" {% if session.month == "Juin" %} selected {% endif %}>Juin</option>
+                            <option value="Octobre" {% if session.month == "Octobre" %} selected {% endif %}>Octobre</option>
+                        </select>
+						Salle
+                        {{ form_errors(form.classroom) }}
+							{{ form_widget(form.classroom) }}
+                	</form>
+                </div>
+                <div class="row some-margin" id="soutenance_list">
+                    <table class="table table-condensed no-margin head-table">
+                        <!-- Details -->
+                        <form>
+                        <tr class="text-center">
+                            <td colspan="4">Filière: {{ form_errors(form.section) }}
+							{{ form_widget(form.section) }}
+                            </td>
+                            
+                            <td colspan="4">Date: <input type="date" class="form-control" id="session_date" name="date" value="{{ session.sdate | date('Y-m-d') }}" required/></td>
+                        </tr>
+                        <!-- president -->
+                        <tr class="text-center">
+                            <td colspan="12">Président du jury:  {{ form_errors(form.president) }}
+							{{ form_widget(form.president) }}
+                            </td>
+                        </tr>
+                        </form>
+                    </table>
+                    <table class="table table-condensed body-table">
+                      {% for soutenance in session.soutenances %}
+                        <tr class="soutenance{{soutenance.id}}">
+                            <td rowspan="6" colspan="1">{{ soutenance.stime | date('H:i') }} &nbsp;<button type="button" class="btn btn-danger" onclick="mydelete({{soutenance.id}}, 1)">Supprimer</button>&nbsp;<button type="button" class="btn btn-primary" onclick="myedit({{soutenance.id}}, {{soutenance.student.id}}, '{{soutenance.stime | date('H:i') }}', {{soutenance.examinateur.id}}, 1)">Editer</button></td>
+                            <td class="key-td" style="background-color:#a7a4a4;width: 30%;">Candidat</td>
+                            <td class="key-td" style="background-color:#a7a4a4;"><span class="cap">{{ soutenance.student.firstname }}</span> {{ soutenance.student.lastname }}</td>
+                        </tr>
+                        <tr class="soutenance{{soutenance.id}}">
+                            <td>Sujet</td>
+                            <td>{{ soutenance.subject }}</td>
+                        </tr>
+                        <tr class="soutenance{{soutenance.id}}">
+                            <td>Entreprise</td>
+                            <td>{{ soutenance.company }}</td>
+                        </tr>
+                        <tr class="soutenance{{soutenance.id}}">
+                            <td>Responsable à l'entreprise</td>
+                            <td>{{ soutenance.etuteur }}</td>
+                        </tr>
+                        <tr class="soutenance{{soutenance.id}}">
+                            <td>Responsable à l'INSAT</td>
+                            <td>{{ soutenance.encadrant }}</td>
+                        </tr>
+                        <tr class="soutenance{{soutenance.id}}">
+                            <td>Examinateur</td>
+                            <td>{{ soutenance.examinateur }}</td>
+                        </tr> 
+						{% endfor %}
+                    </table>	
+                    <table class="table table-condensed body-table style="display:none;">
+                        
+                        <!-- les champs du pfe à ajouter -->
+                        <tr class="to-show">
+                            <td rowspan="6" colspan="1" style="width: 40%;">{{ form_widget(form.soutenances.stime) }}</td>
+                            <td class="key-td">Candidat</td>
+                            <td class="key-td">{{ form_widget(form.soutenances.student) }}
+                            	</td>
+                        </tr>
+                        <tr class="to-show">
+                            <td>Sujet</td>
+                            <td>{{ form_widget(form.soutenances.subject) }}</td>
+                        </tr>
+                        <tr class="to-show">
+                            <td>Entreprise</td>
+                            <td>{{ form_widget(form.soutenances.company) }}</td>
+                        </tr>
+                        <tr class="to-show">
+                            <td>Responsable à l'entreprise</td>
+                            <td>{{ form_widget(form.soutenances.eTuteur) }}</td>
+                        </tr>
+                        <tr class="to-show">
+                            <td>Responsable à l'INSAT</td>
+                            <td>{{ form_widget(form.soutenances.encadrant) }}</td>
+                        </tr>
+                        <tr class="to-show">
+                            <td>Examinateur</td>
+                            <td>{{ form_widget(form.soutenances.examinateur) }}
+                            </td>
+                        </tr>
+                    </table>	
+                </div>
+				<div>
+                   	<button type="button" class="btn btn-default btn-add" style="display:none;"><span class="glyphicon glyphicon-plus"></span> Ajouter soutenance</button>
+                    <button type="button" class="btn btn-default btn-confirm2" form="add-pfe">Confirmer</button>
+                    <button type="button" class="btn btn-default btn-cancel">Annuler</button>
+                </div>
+            </div>
+			{{ form_end(form) }}
+			<br><br>
+			<a href="{{ path('admin_session_view', { id: session.id }) }}" target='_blank' class="btn btn-sm btn-primary">
+                                <i class="fa fa-search"></i> {{ 'action.viewSession'|trans }} 
+                        </a>
+        </section>
+		<style>
+div .form-group{
+	display:none;
+}
+</style>
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section actions">
+
+    </div>
+
+
+{% endblock %}

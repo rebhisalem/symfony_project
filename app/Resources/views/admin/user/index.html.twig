@@ -1,0 +1,116 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'admin_user_index' %}
+
+{% block main %}
+    <h1>{{ 'title.user_list'|trans }}</h1>
+
+    <table class="table table-striped"  id="sessions_list">
+        <thead>
+            <tr>
+                <th>{{ 'label.firstname'|trans }}</th>
+                <th>{{ 'label.lastname'|trans }}</th>
+                <th><i class="fa fa-user"></i> {{ 'label.user_type'|trans }}</th>
+                <th><i class="fa fa-cogs"></i> {{ 'label.actions'|trans }}</th>
+            </tr>
+        </thead>
+		<tfoot>
+            <tr>
+                <th>{{ 'label.firstname'|trans }}</th>
+                <th>{{ 'label.lastname'|trans }}</th>
+                <th><i class="fa fa-user"></i> {{ 'label.user_type'|trans }}</th>
+                <th><i class="fa fa-cogs"></i> {{ 'label.actions'|trans }}</th>
+            </tr>
+        </tfoot>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.firstname }}</td>
+                <td>{{ user.lastname }}</td>
+                <td>{% if user.roles[0]=="Teacher" %} Enseignant {% endif %}{% if user.roles[0]=="Student" %} Etudiant {% endif %} {% if user.roles[0]!="Teacher" and user.roles[0]!="Student" %} {{ user.roles[0] }} {% endif %}</td>
+				<td>
+                    <div class="item-actions">
+                            <a href="{{ path('admin_user_edit', { id: user.id }) }}" class="btn btn-sm btn-primary">
+                                <i class="fa fa-edit"></i> {{ 'action.edit'|trans }}
+                            </a><br>
+							{% if user.roles[0]=="Teacher" %}
+								<a href="{{ path('admin_teacher_englistjuinview', { id: user.id }) }}" class="btn btn-sm btn-primary" target="_blank">
+									{{ 'action.list_soutenances_eng_juin'|trans }}
+								</a><br>
+								<a href="{{ path('admin_teacher_englistview', { id: user.id }) }}" class="btn btn-sm btn-primary" target="_blank">
+									{{ 'action.list_soutenances_eng_octobre'|trans }}
+								</a><br>
+								<a href="{{ path('admin_teacher_liclistjuinview', { id: user.id }) }}" class="btn btn-sm btn-primary" target="_blank">
+									{{ 'action.list_soutenances_lic_juin'|trans }}
+								</a><br>
+								<a href="{{ path('admin_teacher_liclistview', { id: user.id }) }}" class="btn btn-sm btn-primary" target="_blank">
+									{{ 'action.list_soutenances_lic_octobre'|trans }}
+								</a><br>
+								<a href="{{ path('admin_teacher_liclistficheview', { id: user.id }) }}" class="btn btn-sm btn-primary" target="_blank">
+									{{ 'action.list_soutenances_lic_fiche'|trans }}
+								</a><br>
+								<a href="{{ path('admin_teacher_inglistficheview', { id: user.id }) }}" class="btn btn-sm btn-primary" target="_blank">
+									{{ 'action.list_soutenances_ing_fiche'|trans }}
+								</a><br>
+							{% endif %}
+                            <a href="{{ path('admin_user_delete', { id: user.id }) }}" class="btn btn-sm btn-danger">
+                                <i class="fa fa-trash"></i> {{ 'action.delete'|trans }}
+                            </a>
+                    </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4" align="center">{{ 'post.no_posts_found'|trans }}</td>
+           </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section actions">
+        <a href="{{ path('admin_admin_new') }}" class="btn btn-lg btn-block btn-success">
+            <i class="fa fa-plus"></i> {{ 'action.create_admin'|trans }}
+        </a>
+		<a href="{{ path('admin_responsable_new') }}" class="btn btn-lg btn-block btn-success">
+            <i class="fa fa-plus"></i> {{ 'action.responsable_new'|trans }}
+        </a>
+		<a href="{{ path('admin_student_new') }}" class="btn btn-lg btn-block btn-success">
+            <i class="fa fa-plus"></i> {{ 'action.student_new'|trans }}
+        </a>
+		<a href="{{ path('admin_teacher_new') }}" class="btn btn-lg btn-block btn-success">
+            <i class="fa fa-plus"></i> {{ 'action.teacher_new'|trans }}
+        </a>
+		
+		<a href="{{ path('admin_subject_load') }}" class="btn btn-lg btn-block btn-success">
+            <i class="fa fa-plus"></i> {{ 'action.load_subjects'|trans }}
+        </a>
+		
+		<a href="{{ path('admin_teacher_load') }}" class="btn btn-lg btn-block btn-success">
+            <i class="fa fa-plus"></i> {{ 'action.load_teachers'|trans }}
+        </a>
+    </div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+        {% javascripts filter="?jsqueeze" output="js/app.js"
+                "%kernel.root_dir%/Resources/assets/js/jquery-2.1.4.js"
+                "%kernel.root_dir%/Resources/assets/js/moment.min.js"
+                "%kernel.root_dir%/Resources/assets/js/bootstrap-3.3.4.js"
+                "%kernel.root_dir%/Resources/assets/js/highlight.pack.js"
+                "%kernel.root_dir%/Resources/assets/js/bootstrap-datetimepicker.min.js"
+                "%kernel.root_dir%/Resources/assets/js/main_jmal.js"
+                "%kernel.root_dir%/Resources/assets/js/main.js" %}
+                <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+			
+			{% javascripts filter="?jsqueeze" output="js/data_table.js"
+				"%kernel.root_dir%/Resources/assets/js/jquery.dataTables.min.js"
+                "%kernel.root_dir%/Resources/assets/js/dataTables.bootstrap.min.js" %}
+                <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+			
+        {% endblock %}

@@ -1,0 +1,32 @@
+security:
+    encoders:
+        AppBundle\Entity\User: bcrypt
+
+    providers:
+        database_users:
+            entity: { class: AppBundle:User, property: username }
+
+    firewalls:
+        secured_area:
+            pattern: ^/
+
+            anonymous: true
+
+            form_login:
+                # The route name that the login form submits to
+                check_path: security_login_check
+                # The name of the route where the login form lives
+                # When the user tries to access a protected page, they are redirected here
+                login_path: security_login_form
+                # Secure the login form against CSRF
+                csrf_provider: security.csrf.token_manager
+
+            logout:
+                # The route name the user can go to in order to logout
+                path: security_logout
+                # The name of the route to redirect to after logging out
+                target: homepage
+
+    access_control:
+        # this is a catch-all for the admin area
+        - { path: ^/admin, roles: Admin }

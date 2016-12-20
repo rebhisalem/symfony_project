@@ -1,0 +1,45 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'admin_department_index' %}
+
+{% block main %}
+    <h1>{{ 'title.department_list'|trans }}</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>{{ 'label.department'|trans }}</th>
+                <th><i class="fa fa-cogs"></i> {{ 'label.actions'|trans }}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for department in departments %}
+            <tr>
+                <td>{{ department.label }}</td>
+				<td>
+                    <div class="item-actions">
+                            
+                            <a href="{{ path('admin_department_delete', { id: department.id }) }}" class="btn btn-sm btn-danger">
+                                <i class="fa fa-trash"></i> {{ 'action.delete'|trans }}
+                            </a>
+                    </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4" align="center">{{ 'department.no_posts_found'|trans }}</td>
+           </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section actions">
+        <a href="{{ path('admin_department_new') }}" class="btn btn-lg btn-block btn-success">
+            <i class="fa fa-plus"></i> {{ 'action.create_department'|trans }}
+        </a>
+    </div>
+
+
+{% endblock %}

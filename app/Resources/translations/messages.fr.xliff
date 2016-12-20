@@ -1,0 +1,528 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="note">
+                <source>note</source>
+                <target>NOTE</target>
+            </trans-unit>
+            <trans-unit id="tip">
+                <source>tip</source>
+                <target>ASTUCE</target>
+            </trans-unit>
+            <trans-unit id="not_available">
+                <source>not_available</source>
+                <target>Indisponible</target>
+            </trans-unit>
+            <trans-unit id="mit_license">
+                <source>mit_license</source>
+                <target>Licence MIT</target>
+            </trans-unit>
+
+            <trans-unit id="title.homepage">
+                <source>title.homepage</source>
+                <target><![CDATA[Bienvenue sur l'application <strong>Symfony Demo</strong>]]></target>
+            </trans-unit>
+            <trans-unit id="title.source_code">
+                <source>title.source_code</source>
+                <target>Le code source utilisé pour afficher cette page</target>
+            </trans-unit>
+            <trans-unit id="title.controller_code">
+                <source>title.controller_code</source>
+                <target>Code du contrôleur</target>
+            </trans-unit>
+            <trans-unit id="title.twig_template_code">
+                <source>title.twig_template_code</source>
+                <target>Code du template Twig</target>
+            </trans-unit>
+            <trans-unit id="title.login_help">
+                <source>title.login_help</source>
+                <target>Try either of the following users</target>
+            </trans-unit>
+            <trans-unit id="title.login">
+                <source>title.login</source>
+                <target>Connexion sécurisée</target>
+            </trans-unit>
+            <trans-unit id="title.post_list">
+                <source>title.post_list</source>
+                <target>Liste des articles</target>
+            </trans-unit>
+            <trans-unit id="title.edit_post">
+                <source>title.edit_post</source>
+                <target>Modifier l'article #%id%</target>
+            </trans-unit>
+            <trans-unit id="title.add_comment">
+                <source>title.add_comment</source>
+                <target>Laisser un commentaire</target>
+            </trans-unit>
+
+            <trans-unit id="action.show">
+                <source>action.show</source>
+                <target>Voir</target>
+            </trans-unit>
+            <trans-unit id="action.show_code">
+                <source>action.show_code</source>
+                <target>Voir le code</target>
+            </trans-unit>
+            <trans-unit id="action.edit">
+                <source>action.edit</source>
+                <target>Editer</target>
+            </trans-unit>
+            <trans-unit id="action.edit_post">
+                <source>action.edit_post</source>
+                <target>Modifier l'article</target>
+            </trans-unit>
+            <trans-unit id="action.save">
+                <source>action.save</source>
+                <target>Enregistrer</target>
+            </trans-unit>
+            <trans-unit id="action.delete_post">
+                <source>action.delete_post</source>
+                <target>Supprimer l'article</target>
+            </trans-unit>
+            <trans-unit id="action.create_post">
+                <source>action.create_post</source>
+                <target>Créer un nouvel article</target>
+            </trans-unit>
+            <trans-unit id="label.create_post">
+                <source>label.create_post</source>
+                <target>Créer un article</target>
+            </trans-unit>
+            <trans-unit id="action.back_to_list">
+                <source>action.back_to_list</source>
+                <target>Retour à la liste des articles</target>
+            </trans-unit>
+            <trans-unit id="action.publish_comment">
+                <source>action.publish_comment</source>
+                <target>Publier</target>
+            </trans-unit>
+            <trans-unit id="action.sign_in">
+                <source>action.sign_in</source>
+                <target>Connectez-vous</target>
+            </trans-unit>
+            <trans-unit id="action.browse_app">
+                <source>action.browse_app</source>
+                <target>Naviguer sur l'application</target>
+            </trans-unit>
+            <trans-unit id="action.browse_admin">
+                <source>action.browse_admin</source>
+                <target>Naviguer sur l'admin</target>
+            </trans-unit>
+
+            <trans-unit id="label.title">
+                <source>label.title</source>
+                <target>Titre</target>
+            </trans-unit>
+            <trans-unit id="label.author">
+                <source>label.author</source>
+                <target>Auteur</target>
+            </trans-unit>
+            <trans-unit id="label.author_email">
+                <source>label.author_email</source>
+                <target>Mail de l'auteur</target>
+            </trans-unit>
+            <trans-unit id="label.username">
+                <source>label.username</source>
+                <target>Identifiant</target>
+            </trans-unit>
+            <trans-unit id="label.password">
+                <source>label.password</source>
+                <target>Mot de passe</target>
+            </trans-unit>
+            <trans-unit id="label.role">
+                <source>label.role</source>
+                <target>Rôle</target>
+            </trans-unit>
+            <trans-unit id="label.content">
+                <source>label.content</source>
+                <target>Contenu</target>
+            </trans-unit>
+            <trans-unit id="label.summary">
+                <source>label.summary</source>
+                <target>Résumé</target>
+            </trans-unit>
+            <trans-unit id="label.published_at">
+                <source>label.published_at</source>
+                <target>Publié le</target>
+            </trans-unit>
+            <trans-unit id="label.actions">
+                <source>label.actions</source>
+                <target>Actions</target>
+            </trans-unit>
+            <trans-unit id="title.post_new">
+                <source>title.post_new</source>
+                <target>Ajouter un nouvel article</target>
+            </trans-unit>
+            <trans-unit id="action.edit_contents">
+                <source>action.edit_contents</source>
+                <target>Modifier le contenu</target>
+            </trans-unit>
+
+            <trans-unit id="menu.post_list">
+                <source>menu.post_list</source>
+                <target>Liste des articles</target>
+            </trans-unit>
+            <trans-unit id="menu.back_to_blog">
+                <source>menu.back_to_blog</source>
+                <target>Retour au blog</target>
+            </trans-unit>
+            <trans-unit id="menu.homepage">
+                <source>menu.homepage</source>
+                <target>Accueil</target>
+            </trans-unit>
+            <trans-unit id="menu.admin">
+                <source>menu.admin</source>
+                <target>Admin</target>
+            </trans-unit>
+            <trans-unit id="menu.logout">
+                <source>menu.logout</source>
+                <target>Déconnexion</target>
+            </trans-unit>
+
+            <trans-unit id="post.to_publish_a_comment">
+                <source>post.to_publish_a_comment</source>
+                <target>pour publier un commentaire</target>
+            </trans-unit>
+            <trans-unit id="post.num_comments">
+                <source>post.num_comments</source>
+                <target>%count% commentaire|%count% commentaires</target>
+            </trans-unit>
+            <trans-unit id="post.commented_on">
+                <source>post.commented_on</source>
+                <target>commenté le</target>
+            </trans-unit>
+            <trans-unit id="post.no_comments">
+                <source>post.no_comments</source>
+                <target>Soyez le premier à commenter cet article.</target>
+            </trans-unit>
+
+            <trans-unit id="help.app_description">
+                <source>help.app_description</source>
+                <target><![CDATA[Ceci est une <strong>application de démonstration</strong> construite avec le framework Symfony pour illustrer la façon recommandée de développer des applications Symfony.]]></target>
+            </trans-unit>
+            <trans-unit id="help.show_code">
+                <source>help.show_code</source>
+                <target><![CDATA[Cliquez sur ce bouton pour voir le code source du <strong>contrôleur</strong> et du <strong>template</strong> utilisé pour afficher cette page.]]></target>
+            </trans-unit>
+            <trans-unit id="help.browse_app">
+                <source>help.browse_app</source>
+                <target><![CDATA[Parcourir la <strong>section publique</strong> de l'application de démonstration.]]></target>
+            </trans-unit>
+            <trans-unit id="help.browse_admin">
+                <source>help.browse_admin</source>
+                <target><![CDATA[Parcourir l'<strong>interface d'administration</strong> de l'application de démonstration.]]></target>
+            </trans-unit>
+            <trans-unit id="help.login_users">
+                <source>help.login_users</source>
+                <target>Essayez l'un des utilisateurs suivants</target>
+            </trans-unit>
+            <trans-unit id="help.role_user">
+                <source>help.role_user</source>
+                <target>utilisateur normal</target>
+            </trans-unit>
+            <trans-unit id="help.role_admin">
+                <source>help.role_admin</source>
+                <target>administrateur</target>
+            </trans-unit>
+            <trans-unit id="help.reload_fixtures">
+                <source>help.reload_fixtures</source>
+                <target>Si ces utilisateurs ne fonctionnent pas, rechargez les fixtures de l'application en exécutant cette commande depuis le terminal :</target>
+            </trans-unit>
+            <trans-unit id="help.add_user">
+                <source>help.add_user</source>
+                <target>Si vous voulez créer de nouveaux utilisateurs, exécutez cette autre commande :</target>
+            </trans-unit>
+            <trans-unit id="help.more_information">
+                <source>help.more_information</source>
+                <target><![CDATA[Pour plus d'informations, consultez la <a href="http://symfony.com/doc">documentation de Symfony</a>.]]></target>
+            </trans-unit>
+			
+			
+			
+			<trans-unit id="title.user_list">
+                <source>title.user_list</source>
+                <target>Liste des utilisateurs</target>
+            </trans-unit>
+			<trans-unit id="title.section_list">
+                <source>title.section_list</source>
+                <target>Liste des sections</target>
+            </trans-unit>
+			<trans-unit id="title.department_list">
+                <source>title.department_list</source>
+                <target>Liste des départements</target>
+            </trans-unit>
+			<trans-unit id="title.classroom_list">
+                <source>title.classroom_list</source>
+                <target>Liste des salles</target>
+            </trans-unit>
+			<trans-unit id="title.admin_new">
+                <source>title.admin_new</source>
+                <target>Ajouter un Admin</target>
+            </trans-unit>
+			<trans-unit id="title.load_subjects">
+                <source>title.load_subjects</source>
+                <target>Charger des sujets</target>
+            </trans-unit>
+			<trans-unit id="session.deleted_successfully">
+                <source>session.deleted_successfully</source>
+                <target>Session supprimée avec succès</target>
+            </trans-unit>
+			<trans-unit id="title.load_teachers">
+                <source>title.load_teachers</source>
+                <target>Charger des enseignants</target>
+            </trans-unit>
+			<trans-unit id="action.load_teachers">
+                <source>action.load_teachers</source>
+                <target>Charger des enseignants</target>
+            </trans-unit>
+			<trans-unit id="label.load_teachers">
+                <source>label.load_teachers</source>
+                <target>Charger</target>
+            </trans-unit>
+			<trans-unit id="action.student_new">
+                <source>action.student_new</source>
+                <target>Ajouter un Etudiant</target>
+            </trans-unit>
+			<trans-unit id="action.teacher_new">
+                <source>action.teacher_new</source>
+                <target>Ajouter un Enseignant</target>
+            </trans-unit>
+			<trans-unit id="action.responsable_new">
+                <source>action.responsable_new</source>
+                <target>Ajouter un Responsable</target>
+            </trans-unit>
+			<trans-unit id="action.load_subjects">
+                <source>action.load_subjects</source>
+                <target>Charger les sujets</target>
+            </trans-unit>
+			<trans-unit id="menu.user_list">
+                <source>menu.user_list</source>
+                <target>Utilisateurs</target>
+            </trans-unit>
+			<trans-unit id="menu.section_list">
+                <source>menu.section_list</source>
+                <target>Sections</target>
+            </trans-unit>
+			<trans-unit id="menu.department_list">
+                <source>menu.department_list</source>
+                <target>Départements</target>
+            </trans-unit>
+			<trans-unit id="menu.classroom_list">
+                <source>menu.classroom_list</source>
+                <target>Salles</target>
+            </trans-unit>
+			<trans-unit id="action.delete">
+                <source>action.delete</source>
+                <target>Supprimer</target>
+            </trans-unit>
+			<trans-unit id="action.back_to_list_user">
+                <source>action.back_to_list_user</source>
+                <target>Retour à la lister des utilisateurs</target>
+            </trans-unit>
+			<trans-unit id="action.back_to_list_section">
+                <source>action.back_to_list_section</source>
+                <target>Retour à la lister des sections</target>
+            </trans-unit>
+			<trans-unit id="action.back_to_list_department">
+                <source>action.back_to_list_department</source>
+                <target>Retour à la lister des départements</target>
+            </trans-unit>
+			<trans-unit id="action.back_to_list_classroom">
+                <source>action.back_to_list_classroom</source>
+                <target>Retour à la lister des s</target>
+            </trans-unit>
+			<trans-unit id="action.create_admin">
+                <source>action.create_admin</source>
+                <target>Ajouter un Admin</target>
+            </trans-unit>
+			<trans-unit id="action.create_section">
+                <source>action.create_section</source>
+                <target>Ajouter une Section</target>
+            </trans-unit>
+			<trans-unit id="action.create_department">
+                <source>action.create_department</source>
+                <target>Ajouter un Département</target>
+            </trans-unit>
+			<trans-unit id="action.create_classroom">
+                <source>action.create_classroom</source>
+                <target>Ajouter une Salle</target>
+            </trans-unit>
+			<trans-unit id="admin.created_successfully">
+                <source>admin.created_successfully</source>
+                <target>Admin ajouté avec succès</target>
+            </trans-unit>
+			<trans-unit id="student.created_successfully">
+                <source>student.created_successfully</source>
+                <target>Etudiant ajouté avec succès</target>
+            </trans-unit>
+			<trans-unit id="teacher.created_successfully">
+                <source>teacher.created_successfully</source>
+                <target>Enseignant ajouté avec succès</target>
+            </trans-unit>
+			<trans-unit id="responsable.created_successfully">
+                <source>responsable.created_successfully</source>
+                <target>Responsable ajouté avec succès</target>
+            </trans-unit>
+			<trans-unit id="section.created_successfully">
+                <source>section.created_successfully</source>
+                <target>Section ajoutée avec succès</target>
+            </trans-unit>
+			<trans-unit id="department.created_successfully">
+                <source>department.created_successfully</source>
+                <target>Département ajouté avec succès</target>
+            </trans-unit>
+			<trans-unit id="classroom.created_successfully">
+                <source>classroom.created_successfully</source>
+                <target>Salle ajoutée avec succès</target>
+            </trans-unit>
+			<trans-unit id="user.deleted_successfully">
+                <source>user.deleted_successfully</source>
+                <target>Utilisateur supprimé avec succès</target>
+            </trans-unit>
+			<trans-unit id="section.deleted_successfully">
+                <source>section.deleted_successfully</source>
+                <target>Section supprimée avec succès</target>
+            </trans-unit>
+			<trans-unit id="department.deleted_successfully">
+                <source>department.deleted_successfully</source>
+                <target>Département supprimé avec succès</target>
+            </trans-unit>
+			<trans-unit id="classroom.deleted_successfully">
+                <source>classroom.deleted_successfully</source>
+                <target>Salle supprimée avec succès</target>
+            </trans-unit>
+			<trans-unit id="label.email">
+                <source>label.email</source>
+                <target>Email</target>
+            </trans-unit>
+			<trans-unit id="label.section">
+                <source>label.section</source>
+                <target>Section</target>
+            </trans-unit>
+			<trans-unit id="label.president">
+                <source>label.president</source>
+                <target>Président du jury</target>
+            </trans-unit>
+			<trans-unit id="label.session_id">
+                <source>label.session_id</source>
+                <target>Code Session</target>
+            </trans-unit>
+			<trans-unit id="label.grade">
+                <source>label.grade</source>
+                <target>Grade</target>
+            </trans-unit>
+			<trans-unit id="action.create_session">
+                <source>action.create_session</source>
+                <target>Créer Session</target>
+            </trans-unit>
+			<trans-unit id="action.viewSession">
+                <source>action.viewSession</source>
+                <target>Prévisualiser</target>
+            </trans-unit>
+			<trans-unit id="menu.session_list">
+                <source>menu.session_list</source>
+                <target>Sessions</target>
+            </trans-unit>
+			<trans-unit id="title.session_list">
+                <source>title.session_list</source>
+                <target>Liste des sessions</target>
+            </trans-unit>
+			<trans-unit id="label.date">
+                <source>label.date</source>
+                <target>Date</target>
+            </trans-unit>
+			<trans-unit id="label.source_file">
+                <source>label.source_file</source>
+                <target>Fichier Source</target>
+            </trans-unit>
+			<trans-unit id="label.load_subjects">
+                <source>label.load_subjects</source>
+                <target>Charger</target>
+            </trans-unit>
+			<trans-unit id="label.classroom">
+                <source>label.classroom</source>
+                <target>Salle</target>
+            </trans-unit>
+			<trans-unit id="label.firstname">
+                <source>label.firstname</source>
+                <target>Nom</target>
+            </trans-unit>
+			<trans-unit id="label.lastname">
+                <source>label.lastname</source>
+                <target>Prénom</target>
+            </trans-unit>
+			<trans-unit id="label.user_type">
+                <source>label.user_type</source>
+                <target>Rôle</target>
+            </trans-unit>
+			<trans-unit id="label.create_admin">
+                <source>label.create_admin</source>
+                <target>Créer Admin</target>
+            </trans-unit>
+			<trans-unit id="label.create_student">
+                <source>label.create_student</source>
+                <target>Créer Etudiant</target>
+            </trans-unit>
+			<trans-unit id="label.create_responsable">
+                <source>label.create_responsable</source>
+                <target>Créer Responsable</target>
+            </trans-unit>
+			<trans-unit id="label.create_teacher">
+                <source>label.create_teacher</source>
+                <target>Créer Enseignant</target>
+            </trans-unit>
+			<trans-unit id="label.create_section">
+                <source>label.create_section</source>
+                <target>Créer Section</target>
+            </trans-unit>
+			<trans-unit id="action.list_soutenances_eng_juin">
+                <source>action.list_soutenances_eng_juin</source>
+                <target>Soutenances Ingénieurs Juin</target>
+            </trans-unit>
+			<trans-unit id="action.list_soutenances_eng_octobre">
+                <source>action.list_soutenances_eng_octobre</source>
+                <target>Soutenances Ingénieurs Octobre</target>
+            </trans-unit>
+			<trans-unit id="action.list_soutenances_lic_juin">
+                <source>action.list_soutenances_lic_juin</source>
+                <target>Soutenances Licences Juin</target>
+            </trans-unit>
+			<trans-unit id="action.list_soutenances_lic_octobre">
+                <source>action.list_soutenances_lic_octobre</source>
+                <target>Soutenances Licences Octobre</target>
+            </trans-unit>
+			<trans-unit id="action.list_soutenances_ing_fiche">
+                <source>action.list_soutenances_ing_fiche</source>
+                <target>Fiche Encadrement ingénieurs</target>
+            </trans-unit>
+			<trans-unit id="action.list_soutenances_lic_fiche">
+                <source>action.list_soutenances_lic_fiche</source>
+                <target>Fiche Encadrement licences</target>
+            </trans-unit>
+			<trans-unit id="label.create_department">
+                <source>label.create_department</source>
+                <target>Créer Département</target>
+            </trans-unit>
+			<trans-unit id="label.create_classroom">
+                <source>label.create_classroom</source>
+                <target>Créer Salle</target>
+            </trans-unit>
+			<trans-unit id="label.department">
+                <source>label.department</source>
+                <target>Département</target>
+            </trans-unit>
+			<trans-unit id="section.no_posts_found">
+                <source>section.no_posts_found</source>
+                <target>Aucune section trouvée</target>
+            </trans-unit>
+			<trans-unit id="department.no_posts_found">
+                <source>department.no_posts_found</source>
+                <target>Aucun département trouvé</target>
+            </trans-unit>
+			<trans-unit id="classroom.no_posts_found">
+                <source>classroom.no_posts_found</source>
+                <target>Aucune salle trouvée</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

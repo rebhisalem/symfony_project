@@ -1,0 +1,38 @@
+{#
+   This is the base template of the all backend pages. Since this layout is similar
+   to the global layout, we inherit from it to just change the contents of some
+   blocks. In practice, backend templates are using a three-level inheritance,
+   showing how powerful, yet easy to use, is Twig's inheritance mechanism.
+   See http://symfony.com/doc/current/book/templating.html#template-inheritance-and-layouts
+#}
+{% extends 'base.html.twig' %}
+
+{% block header_navigation_links %}
+    {% if app.user.roles[0] == 'Admin' %}
+	<li>
+        <a href="{{ path('admin_user_index') }}">
+            <i class="fa fa-list-alt"></i> {{ 'menu.user_list'|trans }}
+        </a>
+    </li>
+	<li>
+        <a href="{{ path('admin_section_index') }}">
+            <i class="fa fa-list-alt"></i> {{ 'menu.section_list'|trans }}
+        </a>
+    </li>
+	<li>
+        <a href="{{ path('admin_department_index') }}">
+            <i class="fa fa-list-alt"></i> {{ 'menu.department_list'|trans }}
+        </a>
+    </li>
+	{% endif %}
+    <li>
+        <a href="{{ path('admin_classroom_index') }}">
+            <i class="fa fa-list-alt"></i> {{ 'menu.classroom_list'|trans }}
+        </a>
+    </li>
+	<li>
+        <a href="{{ path('admin_session_index') }}">
+            <i class="fa fa-list-alt"></i> {{ 'menu.session_list'|trans }}
+        </a>
+    </li>
+{% endblock %}

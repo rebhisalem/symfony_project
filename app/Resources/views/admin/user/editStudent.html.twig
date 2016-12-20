@@ -1,0 +1,30 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'admin_user_edit' %}
+
+{% block main %}
+    <h1>{{ 'title.edit_post'|trans({'%id%': user.id}) }}</h1>
+
+    {{ include('default/_flash_messages.html.twig') }}
+
+    {{ include('admin/user/_form.html.twig', {
+        form: edit_form,
+        button_label: 'action.save'|trans,
+        include_back_to_home_link: true,
+    }, with_context = false) }}
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section actions">
+        
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script>
+		$(document).ready(function() {
+			document.getElementById("app_student_section").required = true;
+		});
+	</script>
+{% endblock %}

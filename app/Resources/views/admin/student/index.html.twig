@@ -1,0 +1,44 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'admin_student_index' %}
+
+{% block main %}
+    <h1>{{ 'title.fiche_list'|trans }}</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>{{ 'label.type_fiche'|trans }}</th>
+                <th><i class="fa fa-user"></i> {{ 'label.state'|trans }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+					<a href="#" class="btn btn-sm btn-primary">
+                        <i class="fa fa-edit"></i> {{ 'label.fiche_proposition'|trans }}
+                    </a></td>
+				<td>
+					{{ 'label.state_awaiting'|trans }}
+                </td>
+            </tr>
+			<tr>
+                <td>
+					<a href="#" class="btn btn-sm btn-primary">
+                        <i class="fa fa-edit"></i> {{ 'label.fiche_convention'|trans }}
+                    </a></td>
+				<td>
+					{{ 'label.state_awaiting'|trans }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section actions">
+
+    </div>
+
+
+{% endblock %}

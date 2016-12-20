@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+{% block header %}
+{% endblock %}
+{% block body_id 'admin_session_index' %}
+
+{% block main %}
+    <section>
+        	<button class="btn-default" id="btn-pdf-session">Genérer PDF</button>
+            <div id="to-print">
+				<div class="row text-center"><img src="../../../../../header.jpg" />
+				</div>
+                <div class="row text-center">
+					<br>
+                    <h3 class="cap no-margin" style="margin-bottom: 10px;">{% if session.stype == 0 %} p.f.e-ingenieurs {% endif %}{% if session.stype == 1 %} s.f.e en licence appliquée {% endif %}session {{ session.month }} {{ session.year }}
+                    <br>Salle {{ session.classroom }}</h3>
+                </div>
+                <div class="row"  style="margin-left: 0px; margin-right: 0px;">
+                    <table class="table table-condensed body-table" style="display:table" is="single-session">
+                    	<!-- Details -->
+                        <tr class="text-center">
+                            <td style="width: 20%;">Filière: {{ session.section }}</td>
+                            <td style="width: 30%;">Session: {{ nbr }}</td>
+                            <td>Date: {{ session.sdate|date('d-m-Y') }}</td>
+                        </tr>
+                        <!-- president -->
+                        <tr class="text-center">
+                            <td colspan="3">Président du jury: <span class="cap">{{ session.president.firstname }}</span> {{ session.president.lastname }}</td>
+                        </tr>
+                        {% for soutenance in session.soutenances %}
+                        <tr>
+                            <td rowspan="6" colspan="1" style="padding-left: 5px;">  {{ soutenance.stime | date('H:i') }}</td>
+                            <td class="key-td" style="background-color:#a7a4a4;width: 30%;">Candidat</td>
+                            <td class="key-td" style="background-color:#a7a4a4;"><span class="cap">{{ soutenance.student.firstname }}</span> {{ soutenance.student.lastname }}</td>
+                        </tr>
+                        <tr>
+                            <td>Sujet</td>
+                            <td style="font-size:13px;">{{ soutenance.subject }}</td>
+                        </tr>
+                        <tr>
+                            <td>Entreprise</td>
+                            <td>{{ soutenance.company }}</td>
+                        </tr>
+                        <tr>
+                            <td>Responsable à l'entreprise</td>
+                            <td>{{ soutenance.etuteur }}</td>
+                        </tr>
+                        <tr>
+                            <td>Responsable à l'INSAT</td>
+                            <td>{{ soutenance.encadrant }} {% if soutenance.subject.coencadrant is not null %} {% if soutenance.subject.coencadrant.id is not same as (434) %} et {{ soutenance.subject.coencadrant }} {% endif %}{% endif %}</td>
+                        </tr>
+                        <tr>
+                            <td>Examinateur</td>
+                            <td>{{ soutenance.examinateur }}</td>
+                        </tr>
+						{% else %}
+							<tr>
+								<td colspan="4" align="center">{{ 'section.no_posts_found'|trans }}</td>
+						   </tr>
+						{% endfor %}
+                    </table>	
+                </div>
+            </div>
+        </section>
+		<style>
+		#main{
+			width:100%;
+		}
+		</style>
+{% endblock %}
+{% block sidebar %}
+ <div class="section actions">
+        
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

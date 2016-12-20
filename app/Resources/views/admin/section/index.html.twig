@@ -1,0 +1,45 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'admin_section_index' %}
+
+{% block main %}
+    <h1>{{ 'title.section_list'|trans }}</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>{{ 'label.section'|trans }}</th>
+                <th><i class="fa fa-cogs"></i> {{ 'label.actions'|trans }}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for section in sections %}
+            <tr>
+                <td>{{ section.label }}</td>
+				<td>
+                    <div class="item-actions">
+                            
+                            <a href="{{ path('admin_section_delete', { id: section.id }) }}" class="btn btn-sm btn-danger">
+                                <i class="fa fa-trash"></i> {{ 'action.delete'|trans }}
+                            </a>
+                    </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4" align="center">{{ 'section.no_posts_found'|trans }}</td>
+           </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section actions">
+        <a href="{{ path('admin_section_new') }}" class="btn btn-lg btn-block btn-success">
+            <i class="fa fa-plus"></i> {{ 'action.create_section'|trans }}
+        </a>
+    </div>
+
+
+{% endblock %}

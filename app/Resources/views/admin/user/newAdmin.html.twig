@@ -1,0 +1,25 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'admin_admin_new' %}
+
+{% block main %}
+    <h1>{{ 'title.admin_new'|trans }}</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.username) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.password) }}
+		
+
+        <input type="submit" value="{{ 'label.create_admin'|trans }}" class="btn btn-primary" />
+
+        {{ form_widget(form.saveAndCreateNew, { label: 'label.save_and_create_new'|trans, attr: { class: 'btn btn-primary' } }) }}
+
+        <a href="{{ path('admin_user_index') }}" class="btn btn-link">
+            {{ 'action.back_to_list_user'|trans }}
+        </a>
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}

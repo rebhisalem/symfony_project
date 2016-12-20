@@ -1,0 +1,45 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'admin_classroom_index' %}
+
+{% block main %}
+    <h1>{{ 'title.classroom_list'|trans }}</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>{{ 'label.classroom'|trans }}</th>
+                <th><i class="fa fa-cogs"></i> {{ 'label.actions'|trans }}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for classroom in classrooms %}
+            <tr>
+                <td>{{ classroom.label }}</td>
+				<td>
+                    <div class="item-actions">
+                            
+                            <a href="{{ path('admin_classroom_delete', { id: classroom.id }) }}" class="btn btn-sm btn-danger">
+                                <i class="fa fa-trash"></i> {{ 'action.delete'|trans }}
+                            </a>
+                    </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4" align="center">{{ 'classroom.no_posts_found'|trans }}</td>
+           </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section actions">
+        <a href="{{ path('admin_classroom_new') }}" class="btn btn-lg btn-block btn-success">
+            <i class="fa fa-plus"></i> {{ 'action.create_classroom'|trans }}
+        </a>
+    </div>
+
+
+{% endblock %}

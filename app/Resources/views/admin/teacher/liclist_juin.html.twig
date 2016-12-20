@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+{% block header %}
+{% endblock %}
+{% block body_id 'admin_teacher_liclistview' %}
+
+{% block main %}
+    <section>
+        	<button class="btn-default" id="btn-pdf-session">Genérer PDF</button>
+            <div id="to-print">
+                <div class="row text-center"><img src="../../../../../header.jpg" />
+				<div class="row text-center">
+					<br>
+					<br>
+                    <h3 class="cap no-margin" style="margin-bottom: 10px;">
+                    <br>Liste des soutenances s.f.e-licence appliquée session Juin &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ teacher }}</h3>
+                </div>
+                <table class="table table-condensed body-table" style="display:table; width:100%; font-size:13px; text-align:left;"  id="single-list-teacher">
+				<thead>
+                    	<tr>
+                            <td colspan="1">Filière</td>
+                            <td colspan="1">Nom & Prénom</td>
+                            <td colspan="1">Encadrant</td>
+                            <td colspan="1">Président du Jury</td>
+                            <td colspan="1">Examinateur</td>
+                            <td colspan="1">Date</td>
+                            <td colspan="1">Heure</td>
+                            <td colspan="1">Salle</td>
+                        </tr>
+				</thead>
+				<tbody>
+                        <!-- pfe -->
+						{% for session in sessions_president %}
+						{% if session.month == "Juin" %}
+							{% for soutenance in session.soutenances %}
+								<tr>
+									<td>{{ session.section }}</td>
+									<td>{{ soutenance.student }}</td>
+									<td>{{ soutenance.encadrant }}</td>
+									<td>{{ session.president }}</td>
+									<td>{{ soutenance.examinateur }}</td>
+									<td>{{ session.sdate | date('d-m-Y') }}</td>
+									<td>{{ soutenance.stime | date('H:i')}}</td>
+									<td>{{ session.classroom }}</td>
+								</tr>
+							{% endfor %}
+						{% endif %}
+						{% endfor %}
+						{% for session in sessions_examinateur %}
+						{% if session.month == "Juin" %}
+							{% for soutenance in session.soutenances %}
+							{% if soutenance.examinateur is same as(teacher) %}
+								<tr>
+									<td>{{ session.section }}</td>
+									<td>{{ soutenance.student }}</td>
+									<td>{{ soutenance.encadrant }}</td>
+									<td>{{ session.president }}</td>
+									<td>{{ soutenance.examinateur }}</td>
+									<td>{{ session.sdate | date('d-m-Y') }}</td>
+									<td>{{ soutenance.stime | date('H:i')}}</td>
+									<td>{{ session.classroom }}</td>
+								</tr>
+							{% endif %}
+							{% endfor %}
+						{% endif %}
+						{% endfor %}
+						{% for session in sessions_encadrant %}
+						{% if session.month == "Juin" %}
+							{% for soutenance in session.soutenances %}
+							{% if soutenance.encadrant is same as(teacher) %}
+								<tr>
+									<td>{{ session.section }}</td>
+									<td>{{ soutenance.student }}</td>
+									<td>{{ soutenance.encadrant }}</td>
+									<td>{{ session.president }}</td>
+									<td>{{ soutenance.examinateur }}</td>
+									<td>{{ session.sdate | date('d-m-Y') }}</td>
+									<td>{{ soutenance.stime | date('H:i')}}</td>
+									<td>{{ session.classroom }}</td>
+								</tr>
+							{% endif %}
+							{% endfor %}
+						{% endif %}
+						{% endfor %}
+                    </tbody>
+					</table>
+                	
+        	</div>
+        </section>
+		<style>
+		#main{
+			width:100%;
+		}
+		</style>
+{% endblock %}
+{% block sidebar %}
+ <div class="section actions">
+        
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

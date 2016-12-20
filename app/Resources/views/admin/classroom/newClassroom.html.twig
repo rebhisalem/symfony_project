@@ -1,0 +1,23 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'admin_classroom_new' %}
+
+{% block main %}
+    <h1>{{ 'action.create_classroom'|trans }}</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.label) }}
+		
+
+        <input type="submit" value="{{ 'label.create_classroom'|trans }}" class="btn btn-primary" />
+
+        {{ form_widget(form.saveAndCreateNew, { label: 'label.save_and_create_new'|trans, attr: { class: 'btn btn-primary' } }) }}
+
+        <a href="{{ path('admin_classroom_index') }}" class="btn btn-link">
+            {{ 'action.back_to_list_classroom'|trans }}
+        </a>
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}

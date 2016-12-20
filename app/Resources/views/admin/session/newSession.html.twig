@@ -1,0 +1,96 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'admin_session_new' %}
+
+{% block main %}
+    <section class="some-margin">
+	{{ form_start(form) }}
+            <div id="to-print">
+                <div class="row text-center">
+                	<form>
+                        <select name="type" id="stype" class="form-control">
+                            <option value="0" selected>p.f.e. ingenieurs</option>
+                            <option value="1">s.f.e. en licence appliquée</option>
+                        </select>
+						<select name="month" id="month" class="form-control">
+                            <option value="Juin" selected>Juin</option>
+                            <option value="Octobre">Octobre</option>
+                        </select>
+						Salle
+                        {{ form_errors(form.classroom) }}
+							{{ form_widget(form.classroom) }}
+                	</form>
+                </div>
+                <div class="row some-margin" id="soutenance_list">
+                    <table class="table table-condensed no-margin head-table">
+                        <!-- Details -->
+                        <form>
+                        <tr class="text-center">
+                            <td colspan="4">Filière: {{ form_errors(form.section) }}
+							{{ form_widget(form.section) }}
+                            </td>
+                            
+                            <td colspan="4">Date: <input type="date" class="form-control" id="session_date" name="date" value="09-06-2015" required/></td>
+                        </tr>
+                        <!-- president -->
+                        <tr class="text-center">
+                            <td colspan="12">Président du jury:  {{ form_errors(form.president) }}
+							{{ form_widget(form.president) }}
+                            </td>
+                        </tr>
+                        </form>
+                    </table>
+                    <table class="table table-condensed body-table">
+                        
+                        <!-- les champs du pfe à ajouter -->
+                        <tr class="to-show">
+                            <td rowspan="6" colspan="1" style="width: 40%;">{{ form_widget(form.soutenances.stime) }}</td>
+                            <td class="key-td">Candidat</td>
+                            <td class="key-td">{{ form_widget(form.soutenances.student) }}
+                            	</td>
+                        </tr>
+                        <tr class="to-show">
+                            <td>Sujet</td>
+                            <td>{{ form_widget(form.soutenances.subject) }}</td>
+                        </tr>
+                        <tr class="to-show">
+                            <td>Entreprise</td>
+                            <td>{{ form_widget(form.soutenances.company) }}</td>
+                        </tr>
+                        <tr class="to-show">
+                            <td>Responsable à l'entreprise</td>
+                            <td>{{ form_widget(form.soutenances.eTuteur) }}</td>
+                        </tr>
+                        <tr class="to-show">
+                            <td>Responsable à l'INSAT</td>
+                            <td>{{ form_widget(form.soutenances.encadrant) }}</td>
+                        </tr>
+                        <tr class="to-show">
+                            <td>Examinateur</td>
+                            <td>{{ form_widget(form.soutenances.examinateur) }}
+                            </td>
+                        </tr>
+                    </table>	
+                    
+                </div>
+				<div>
+                   	<button type="button" class="btn btn-default btn-add" style="display:none;"><span class="glyphicon glyphicon-plus"></span> Ajouter soutenance</button>
+                    <button type="button" class="btn btn-default btn-confirm" form="add-pfe">Confirmer</button>
+                    <button type="button" class="btn btn-default btn-cancel">Annuler</button>
+                </div>
+            </div>
+			{{ form_end(form) }}
+			<br><br>
+			<a href="" target='_blank' class="btn btn-sm btn-primary" id="preview_session" style="display:none;">
+                                <i class="fa fa-search"></i> {{ 'action.viewSession'|trans }} 
+                        </a>
+        </section>
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section actions">
+
+    </div>
+
+
+{% endblock %}

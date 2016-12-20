@@ -1,0 +1,38 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'admin_teacher_new' %}
+
+{% block main %}
+    <h1>{{ 'action.teacher_new'|trans }}</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.username) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.password) }}
+		{{ form_row(form.firstname) }}
+		{{ form_row(form.lastname) }}
+		{{ form_row(form.grade) }}
+		{{ form_row(form.department) }}
+		
+
+        <input type="submit" value="{{ 'label.create_teacher'|trans }}" class="btn btn-primary" />
+
+        {{ form_widget(form.saveAndCreateNew, { label: 'label.save_and_create_new'|trans, attr: { class: 'btn btn-primary' } }) }}
+
+        <a href="{{ path('admin_user_index') }}" class="btn btn-link">
+            {{ 'action.back_to_list_user'|trans }}
+        </a>
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script>
+		$(document).ready(function() {
+			document.getElementById("app_teacher_department").required = true;
+		});
+	</script>
+{% endblock %}
